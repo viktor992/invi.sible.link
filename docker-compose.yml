@@ -9,28 +9,37 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-story
+    volumes:
+      - invisibleapp:/usr/src/app
     ports:
       - 7000:7000
     depends_on:
       - db
   vigile:
-    build:
-      context: .
-      dockerfile: Dockerfile-vigile
+    image: node:6
+    command: ["npm","run","vigile"]
+    volumes_from:
+      - storyteller
+    working_dir: /usr/src/app
     ports:
       - 7200:7200
     depends_on:
       - db
+      - storyteller
   exposer:
-    build:
-      context: .
-      dockerfile: Dockerfile-exposer
+    image: node:6
+    command: ["npm","run","exposer"]
+    volumes_from:
+      - storyteller
+    working_dir: /usr/src/app
     ports:
       - 7300:7300
     depends_on:
       - db
+      - storyteller
   #chopsticks:
     # image:
 
 volumes:
   invisibledata:
+  invisibleapp:
