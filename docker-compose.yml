@@ -9,6 +9,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-story
+    environment:
+      mongodb: mongodb://db/ivl
     volumes:
       - invisibleapp:/usr/src/app
     ports:
@@ -17,6 +19,8 @@ services:
       - db
   vigile:
     image: node:6
+    environment:
+      mongodb: mongodb://db/ivl
     command: ["npm","run","vigile"]
     volumes_from:
       - storyteller
@@ -28,6 +32,8 @@ services:
       - storyteller
   exposer:
     image: node:6
+    environment:
+      mongodb: mongodb://db/ivl
     command: ["npm","run","exposer"]
     volumes_from:
       - storyteller
