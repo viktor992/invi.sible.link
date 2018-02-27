@@ -58,7 +58,16 @@
         "csv": "ngos/donation.csv"
     } ],
     "gobwebsecpy": [ {
-        "name": "gobwebsecpy",
+        "name": "paraguay",
         "csv": "gobwebsecpy/lista_paraguay.csv"
+    }, {
+        "name": "brasil",
+        "csv": "gobwebsecpy/lista_brasil.csv"
+    }, {
+        "name": "chile",
+        "csv": "gobwebsecpy/lista_chile.csv"
+    }, {
+        "name": "colombia",
+        "csv": "gobwebsecpy/lista_colombia.csv"
     } ]
 }}
