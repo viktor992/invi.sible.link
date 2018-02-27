@@ -2,7 +2,7 @@
   "name": "invi.sible.link",
   "version": "1.0.0",
   "description": "This is https://invi.sible.link codebase",
-  "main": "index.js",
+  "main": "plugins/index.js",
   "scripts": {
     "build-css": "stylus styles/index.styl",
     "watch-css": "stylus styles/index.styl -o dist/css -w",
